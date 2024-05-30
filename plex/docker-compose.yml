@@ -1,0 +1,19 @@
+services:
+  plex:
+    container_name: plex
+    image: plexinc/pms-docker:1.40.2.8395-c67dce28e
+    restart: unless-stopped
+    volumes:
+      - config:/config
+      - transcode:/transcode
+      - /media/dataone/plexlibrary:/dataone
+      - /media/datatwo/plexlibrary:/datatwo
+
+volumes:
+  config:
+  transcode:
+
+networks:
+  default:
+    external: true
+    name: proxy

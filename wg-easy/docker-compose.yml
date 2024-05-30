@@ -21,8 +21,6 @@ services:
 
 volumes:
   etc_wireguard:
-    external: true
-    name: etc_wireguard
 
 networks:
   default:

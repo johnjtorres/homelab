@@ -25,8 +25,9 @@ services:
       - TIME_ZONE=${TIME_ZONE} # Optional, default is UTC. Should be uncomment and set to your local time zone.
       - SEAFILE_ADMIN_EMAIL=${SEAFILE_ADMIN_EMAIL} # Specifies Seafile admin user, default is 'me@example.com'.
       - SEAFILE_ADMIN_PASSWORD=${SEAFILE_ADMIN_PASSWORD} # Specifies Seafile admin password, default is 'asecret'.
-      - SEAFILE_SERVER_HOSTNAME=${SEAFILE_SERVER_HOSTNAME}
       - SEAFILE_SERVER_LETSENCRYPT=false # Whether to use https or not.
+      - SERVICE_URL=${SERVICE_URL}
+      - FILE_SERVER_ROOT=${FILE_SERVER_ROOT}
     depends_on:
       - db
       - memcached

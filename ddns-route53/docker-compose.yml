@@ -1,0 +1,17 @@
+services:
+  ddns-route53:
+    image: crazymax/ddns-route53:2.12.0
+    container_name: ddns-route53
+    volumes:
+      - "etc_ddns_route53:/etc/ddns-route53/:ro"
+    environment:
+      - "TZ=America/Los_Angeles"
+      - "SCHEDULE=*/30 * * * *"
+      - "LOG_LEVEL=info"
+      - "LOG_JSON=false"
+    restart: always
+
+volumes:
+  etc_ddns_route53:
+    external: true
+    name: etc_ddns_route53

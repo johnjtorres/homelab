@@ -10,12 +10,12 @@ services:
       - EULA="TRUE"
       - VERSION=1.20.6
     volumes:
-      - minecraft_data:/data
+      - mc-vanilla-1_data:/data
 
 volumes:
-  minecraft_data:
+  mc-vanilla-1_data:
+    name: mc-vanilla-1_data
     external: true
-    name: minecraft_data
 
 networks:
   default:

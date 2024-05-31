@@ -1,0 +1,21 @@
+services:
+  mc:
+    image: itzg/minecraft-server:java21
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+    volumes:
+      - minecraft_data:/data
+
+volumes:
+  minecraft_data:
+    external: true
+    name: minecraft_data
+
+networks:
+  default:
+    external: true
+    name: minecraft

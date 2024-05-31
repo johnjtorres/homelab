@@ -14,6 +14,7 @@ services:
       MAX_TICK_TIME: "-1"
       AUTOPAUSE_TIMEOUT_INIT: "30"
       AUTOPAUSE_TIMEOUT_EST: "10"
+      DEBUG_AUTOPAUSE: true
     volumes:
       - mc-vanilla-1_data:/data
 

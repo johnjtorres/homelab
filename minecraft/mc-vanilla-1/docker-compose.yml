@@ -9,6 +9,9 @@ services:
     environment:
       - EULA=TRUE
       - VERSION=1.20.6
+      - ENABLE_AUTO_PAUSE=TRUE
+      - MAX_TICK_TIME=-1
+      - RCON_PASSWORD=${RCON_PASSWORD}
     volumes:
       - mc-vanilla-1_data:/data
 

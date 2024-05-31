@@ -7,11 +7,13 @@ services:
     ports:
       - "25565:25565"
     environment:
-      - EULA=TRUE
-      - VERSION=1.20.6
-      - ENABLE_AUTO_PAUSE=TRUE
-      - MAX_TICK_TIME=-1
-      - RCON_PASSWORD=${RCON_PASSWORD}
+      EULA: "TRUE"
+      VERSION: "1.20.6"
+      RCON_PASSWORD: "${RCON_PASSWORD}"
+      ENABLE_AUTO_PAUSE: "TRUE"
+      MAX_TICK_TIME: "-1"
+      AUTOPAUSE_TIMEOUT_INIT: "30"
+      AUTOPAUSE_TIMEOUT_EST: "10"
     volumes:
       - mc-vanilla-1_data:/data
 

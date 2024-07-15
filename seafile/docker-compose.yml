@@ -2,6 +2,7 @@ services:
   db:
     image: mariadb:10.11
     container_name: seafile-mysql
+    restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWD} # Required, set the root's password of MySQL service.
       - MYSQL_LOG_CONSOLE=true
@@ -12,11 +13,13 @@ services:
   memcached:
     image: memcached:1.6.18
     container_name: seafile-memcached
+    restart: unless-stopped
     entrypoint: memcached -m 256
 
   seafile:
     image: seafileltd/seafile-mc:11.0.9
     container_name: seafile
+    restart: unless-stopped
     volumes:
       - seafile_data:/shared # Required, specifies the path to Seafile data persistent store.
     environment:
